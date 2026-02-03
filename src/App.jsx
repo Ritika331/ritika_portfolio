@@ -68,6 +68,42 @@ function App() {
           </ul>
         </div>
       </section>
+            <section className="projects">
+        <h3>Projects</h3>
+
+        <div className="project-card">
+          <h4>MindMate Pro — Full-Stack Mental Wellness Application</h4>
+          <p className="tech">
+            TypeScript · React · Node.js
+          </p>
+          <ul>
+            <li>Designed backend APIs for mood tracking, journaling, and analytics workflows</li>
+            <li>Enforced backend business rules such as one check-in per day</li>
+            <li>Built authentication-ready backend flows with protected routing</li>
+            <li>Ensured reliable data flow between frontend and backend layers</li>
+          </ul>
+          <p className="contribution">
+            <strong>My contribution:</strong> Backend business logic, API correctness, and data flow guarantees.
+          </p>
+        </div>
+
+        <div className="project-card">
+          <h4>PayFlow — Backend-Focused System Simulation</h4>
+          <p className="tech">
+            TypeScript · Node.js
+          </p>
+          <ul>
+            <li>Designed backend flows with explicit state transitions (INITIATED, SUCCESS, FAILED)</li>
+            <li>Implemented idempotent API behavior to safely handle retries and duplicate requests</li>
+            <li>Ensured deterministic backend behavior across success and failure scenarios</li>
+            <li>Modeled retry-safe logic without relying on external infrastructure</li>
+          </ul>
+          <p className="contribution">
+            <strong>My contribution:</strong> Payment state modeling, idempotency logic, and backend correctness.
+          </p>
+        </div>
+      </section>
+
     </div>
   );
 }

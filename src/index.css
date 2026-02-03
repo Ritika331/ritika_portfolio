@@ -92,3 +92,49 @@ body {
   border-radius: 6px;
   font-size: 0.95rem;
 }
+
+.projects {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.projects h3 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.project-card {
+  background: #141414;
+  padding: 28px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.project-card h4 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.project-card .tech {
+  font-size: 0.95rem;
+  color: #a5b4fc;
+  margin-bottom: 16px;
+}
+
+.project-card ul {
+  margin-left: 18px;
+  margin-bottom: 16px;
+}
+
+.project-card ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.project-card .contribution {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
