@@ -34,6 +34,40 @@ function App() {
           opportunities.
         </p>
       </section>
+      <section className="skills">
+        <h3>Skills</h3>
+
+        <div className="skills-group">
+          <h4>Backend</h4>
+          <ul>
+            <li>Node.js</li>
+            <li>TypeScript</li>
+            <li>Java</li>
+            <li>SpringBoot</li>
+            <li>REST API Design</li>
+            <li>Backend Business Logic</li>
+            <li>State Management</li>
+          </ul>
+        </div>
+        <div className="skills-group">
+          <h4>Frontend</h4>
+          <ul>
+            <li>React</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        <div className="skills-group">
+          <h4>Tools & Platforms</h4>
+          <ul>
+            <li>Git & GitHub</li>
+            <li>ServiceNow</li>
+            <li>Oracle Cloud OCI</li>
+            <li>Power BI</li>
+          </ul>
+        </div>
+      </section>
     </div>
   );
 }

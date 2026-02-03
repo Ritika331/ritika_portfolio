@@ -56,3 +56,39 @@ body {
   margin-bottom: 18px;
   opacity: 0.9;
 }
+
+.skills {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.skills h3 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.skills-group {
+  margin-bottom: 40px;
+}
+
+.skills-group h4 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #a5b4fc;
+}
+
+.skills-group ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills-group li {
+  background: #141414;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
