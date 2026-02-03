@@ -1,7 +1,7 @@
 function App() {
   return (
     <div className="app">
-      <section className="hero">
+      <section className="hero visible">
         <h1>Ritika Srivastava</h1>
         <h2>Backend-Focused Full-Stack Developer</h2>
         <p>
