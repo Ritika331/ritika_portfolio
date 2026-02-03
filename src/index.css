@@ -138,3 +138,27 @@ body {
   font-size: 0.95rem;
   opacity: 0.9;
 }
+
+.achievements {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.achievements h3 {
+  font-size: 2rem;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.achievements ul {
+  list-style: none;
+}
+
+.achievements li {
+  background: #141414;
+  padding: 18px 22px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}

@@ -103,6 +103,27 @@ function App() {
           </p>
         </div>
       </section>
+            <section className="achievements">
+        <h3>Achievements & Certifications</h3>
+
+        <ul>
+          <li>
+            Ranked in the <strong>top 5% nationwide</strong> in NPTEL Programming in Java (Score: 95%)
+          </li>
+          <li>
+            Completed <strong>Java Full Stack Developer Virtual Internship</strong> (AICTE-approved, Grade O)
+          </li>
+          <li>
+            Oracle Cloud Infrastructure 2025 Certified <strong>Generative AI Professional</strong>
+          </li>
+          <li>
+            Selected for <strong>ServiceNow Application Developer</strong> training through assessment-based screening
+          </li>
+          <li>
+            Co-author of research papers presented at <strong>RAICCIT 2025</strong> and <strong>Bhavisya 2025</strong>
+          </li>
+        </ul>
+      </section>
 
     </div>
   );
