@@ -124,6 +124,33 @@ function App() {
           </li>
         </ul>
       </section>
+              <section className="contact">
+        <h3>Contact</h3>
+        <p>
+          I’m actively seeking Backend Engineer and Full-Stack Engineer
+          opportunities.
+        </p>
+
+        <div className="contact-links">
+          <a href="Email Id:ritikasrivastava010@gmail.com">
+            ritikasrivastava010@gmail.com
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ritika-srivastava-41a40b2b4"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/Ritika331"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
+      </section>
 
     </div>
   );
