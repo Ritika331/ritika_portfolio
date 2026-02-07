@@ -138,9 +138,15 @@ function App() {
         </p>
 
         <div className="contact-links">
-          <a href="Email Id:ritikasrivastava010@gmail.com">
+          <a
+          href="mailto:ritikasrivastava010@gmail.com"
+          onClick={(e)=>{
+            e.preventDefault();
+            window.location.href="mailto:ritikasrivastava010@gmail.com";
+          }}
+          >
             ritikasrivastava010@gmail.com
-          </a>
+            </a>
           <a
             href="https://www.linkedin.com/in/ritika-srivastava-41a40b2b4"
             target="_blank"
