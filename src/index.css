@@ -81,10 +81,16 @@ body::before {
   font-weight: 700;
   background: linear-gradient(90deg, #ffffff, #a5b4fc, #ffffff);
   background-size: 200%;
-  -webkit-background-clip: text;
+
+  background-clip: text;              
+  -webkit-background-clip: text;      
+
+  color: transparent;                 
   -webkit-text-fill-color: transparent;
+
   animation: shimmer 3s linear infinite;
 }
+
 
 @keyframes shimmer {
   from { background-position: 0%; }
