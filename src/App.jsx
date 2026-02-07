@@ -45,11 +45,11 @@ function App() {
         <div className="skills-group">
           <h4>Backend</h4>
           <ul>
-            <li>Node.js</li>
-            <li>TypeScript</li>
-            <li>Java</li>
-            <li>SpringBoot</li>
-            <li>REST API Design</li>
+            <li><i className="devicon-nodejs-plain"></i> Node.js</li>
+            <li><i className="devicon-typescript-plain"></i>TypeScript</li>
+            <li><i className="devicon-java-plain"></i> Java</li>
+            <li><i className="devicon-spring-plain"></i> SpringBoot</li>
+            <li><i className="devicon-postgresql-plain"></i>REST API Design</li>
             <li>Backend Business Logic</li>
             <li>State Management</li>
           </ul>

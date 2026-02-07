@@ -1,12 +1,15 @@
-html{
-  scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
+
+/* ===== Reset ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===== Base ===== */
 body {
   background-color: #0b0b0b;
   color: #ffffff;
@@ -14,11 +17,11 @@ body {
   letter-spacing: 0.2px;
 }
 
-
 .app {
   min-height: 100vh;
 }
 
+/* ===== Hero ===== */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -26,6 +29,25 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(165, 180, 252, 0.15),
+    transparent 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
 .hero h1 {
@@ -44,6 +66,42 @@ body {
   font-size: 1rem;
   opacity: 0.8;
 }
+
+/* ===== Profile Image ===== */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 24px;
+  border: 3px solid #a5b4fc;
+  box-shadow: 0 0 25px rgba(165, 180, 252, 0.35);
+}
+
+/* ===== Section Base ===== */
+section:not(.hero) {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+section h3 {
+  font-size: 2rem;
+  margin-bottom: 32px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+section h3::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 2px;
+  background: #a5b4fc;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ===== About ===== */
 .about {
   max-width: 800px;
   margin: 0 auto;
@@ -51,27 +109,16 @@ body {
   line-height: 1.7;
 }
 
-.about h3 {
-  font-size: 2rem;
-  margin-bottom: 24px;
-  text-align: center;
-}
-
 .about p {
   margin-bottom: 18px;
   opacity: 0.9;
 }
 
+/* ===== Skills ===== */
 .skills {
   max-width: 900px;
   margin: 0 auto;
   padding: 80px 20px;
-}
-
-.skills h3 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  text-align: center;
 }
 
 .skills-group {
@@ -96,18 +143,31 @@ body {
   padding: 10px 14px;
   border-radius: 6px;
   font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.skills-group li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Icon List ===== */
+.icon-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-list i {
+  font-size: 1.5rem;
+  color: #a5b4fc;
+}
+
+/* ===== Projects ===== */
 .projects {
   max-width: 900px;
   margin: 0 auto;
   padding: 80px 20px;
-}
-
-.projects h3 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-  text-align: center;
 }
 
 .project-card {
@@ -115,6 +175,13 @@ body {
   padding: 28px;
   border-radius: 10px;
   margin-bottom: 40px;
+  border-left: 4px solid #a5b4fc;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
 .project-card h4 {
@@ -144,16 +211,11 @@ body {
   opacity: 0.9;
 }
 
+/* ===== Achievements ===== */
 .achievements {
   max-width: 900px;
   margin: 0 auto;
   padding: 80px 20px;
-}
-
-.achievements h3 {
-  font-size: 2rem;
-  margin-bottom: 32px;
-  text-align: center;
 }
 
 .achievements ul {
@@ -166,8 +228,15 @@ body {
   border-radius: 8px;
   margin-bottom: 16px;
   line-height: 1.6;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.achievements li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Contact ===== */
 .contact {
   max-width: 900px;
   margin: 0 auto;
@@ -175,24 +244,19 @@ body {
   text-align: center;
 }
 
-.contact h3{
-  font-size: 2rem;
-  margin-bottom: 20px; 
-}
-
-.contact p{
+.contact p {
   margin-bottom: 32px;
   opacity: 0.9;
 }
 
-.contact-links{
-  display:flex;
-  justify-content:center;
-  gap:32px;
-  flex-wrap:wrap;
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
-.contact-links a{
+.contact-links a {
   color: #a5b4fc;
   text-decoration: none;
   font-size: 1.05rem;
@@ -204,31 +268,7 @@ body {
   border-color: #a5b4fc;
 }
 
-
-
-h1,h2,h3,h4 {
-  letter-spacing:0.3px;
+/* ===== Typography Polish ===== */
+h1, h2, h3, h4 {
+  letter-spacing: 0.3px;
 }
-
-.project-card,
-.skills-group li,
-.achievements li {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-card:hover,
-.skills-group li:hover,
-.achievements li:hover {
-  transform: translateY(-4px);
-  box-shadow:0 8px 24px rgba(0,0,0,0.4);
-}
-
-.profile-pic {
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-bottom:24px;
-  border: 3px solid #a5b4fc;
-}
-
