@@ -2,14 +2,14 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ===== Reset ===== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== Base ===== */
+
 body {
   background-color: #0b0b0b;
   color: #ffffff;
@@ -21,7 +21,7 @@ body {
   min-height: 100vh;
 }
 
-/* ===== Hero ===== */
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -67,18 +67,19 @@ body {
   opacity: 0.8;
 }
 
-/* ===== Profile Image ===== */
 .profile-pic {
-  width: 150px;
-  height: 150px;
+  width: 190px;
+  height: 190px;
   border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 24px;
+  object-fit: contain;
+  background-color: #0b0b0b;
+  margin-bottom: 28px;
   border: 3px solid #a5b4fc;
-  box-shadow: 0 0 25px rgba(165, 180, 252, 0.35);
+  box-shadow: 0 0 30px rgba(165, 180, 252, 0.45);
 }
 
-/* ===== Section Base ===== */
+
+
 section:not(.hero) {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -101,7 +102,7 @@ section h3::after {
   border-radius: 2px;
 }
 
-/* ===== About ===== */
+
 .about {
   max-width: 800px;
   margin: 0 auto;
@@ -114,7 +115,7 @@ section h3::after {
   opacity: 0.9;
 }
 
-/* ===== Skills ===== */
+
 .skills {
   max-width: 900px;
   margin: 0 auto;
@@ -151,7 +152,7 @@ section h3::after {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== Icon List ===== */
+
 .icon-list li {
   display: flex;
   align-items: center;
@@ -163,7 +164,7 @@ section h3::after {
   color: #a5b4fc;
 }
 
-/* ===== Projects ===== */
+
 .projects {
   max-width: 900px;
   margin: 0 auto;
@@ -211,7 +212,7 @@ section h3::after {
   opacity: 0.9;
 }
 
-/* ===== Achievements ===== */
+
 .achievements {
   max-width: 900px;
   margin: 0 auto;
@@ -236,7 +237,7 @@ section h3::after {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== Contact ===== */
+
 .contact {
   max-width: 900px;
   margin: 0 auto;
@@ -268,7 +269,52 @@ section h3::after {
   border-color: #a5b4fc;
 }
 
-/* ===== Typography Polish ===== */
+
 h1, h2, h3, h4 {
   letter-spacing: 0.3px;
+}
+
+.hero > * {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.hero > *:nth-child(1) { animation-delay: 0.1s; }
+.hero > *:nth-child(2) { animation-delay: 0.2s; }
+.hero > *:nth-child(3) { animation-delay: 0.3s; }
+.hero > *:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section:not(.hero) {
+  animation: fadeSection 0.9s ease forwards;
+}
+
+@keyframes fadeSection {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+a {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
 }
