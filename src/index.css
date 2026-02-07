@@ -114,7 +114,7 @@ body::before {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   background-color: #050510;
   margin-bottom: 28px;
