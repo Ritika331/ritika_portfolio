@@ -2,26 +2,43 @@ html {
   scroll-behavior: smooth;
 }
 
-
+/* ===== Reset ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
+/* ===== Body & Tech Background ===== */
 body {
-  background-color: #0b0b0b;
   color: #ffffff;
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   letter-spacing: 0.2px;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(165,180,252,0.18), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(99,102,241,0.18), transparent 40%),
+    linear-gradient(to bottom, #050510, #0b0b1a);
+}
+
+/* Subtle tech grid */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .app {
   min-height: 100vh;
 }
 
-
+/* ===== Hero ===== */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -32,16 +49,18 @@ body {
   padding: 0 20px;
   position: relative;
   overflow: hidden;
+  animation: heroFloat 6s ease-in-out infinite;
 }
 
+/* Glow behind hero */
 .hero::before {
   content: "";
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 520px;
+  height: 520px;
   background: radial-gradient(
     circle,
-    rgba(165, 180, 252, 0.15),
+    rgba(165,180,252,0.22),
     transparent 70%
   );
   top: 50%;
@@ -50,9 +69,26 @@ body {
   z-index: -1;
 }
 
+@keyframes heroFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* ===== Hero Text ===== */
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 3.6rem;
   font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #a5b4fc, #ffffff);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  from { background-position: 0%; }
+  to   { background-position: 200%; }
 }
 
 .hero h2 {
@@ -64,26 +100,51 @@ body {
 .hero p {
   margin-top: 20px;
   font-size: 1rem;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
+/* ===== Profile Image ===== */
 .profile-pic {
-  width: 190px;
-  height: 190px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: contain;
-  background-color: #0b0b0b;
+  object-position: center;
+  background-color: #050510;
   margin-bottom: 28px;
   border: 3px solid #a5b4fc;
-  box-shadow: 0 0 30px rgba(165, 180, 252, 0.45);
   position: relative;
-  z-index:2;
+  z-index: 2;
+  animation: pulseGlow 3s ease-in-out infinite;
 }
 
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 25px rgba(165,180,252,0.4);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(165,180,252,0.8);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(165,180,252,0.4);
+  }
+}
 
-
+/* ===== Section Base ===== */
 section:not(.hero) {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  animation: fadeSection 1s ease forwards;
+}
+
+@keyframes fadeSection {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 section h3 {
@@ -104,7 +165,7 @@ section h3::after {
   border-radius: 2px;
 }
 
-
+/* ===== About ===== */
 .about {
   max-width: 800px;
   margin: 0 auto;
@@ -117,7 +178,7 @@ section h3::after {
   opacity: 0.9;
 }
 
-
+/* ===== Skills ===== */
 .skills {
   max-width: 900px;
   margin: 0 auto;
@@ -146,15 +207,15 @@ section h3::after {
   padding: 10px 14px;
   border-radius: 6px;
   font-size: 0.95rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .skills-group li:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
 }
 
-
+/* ===== Tech Icons ===== */
 .icon-list li {
   display: flex;
   align-items: center;
@@ -162,11 +223,11 @@ section h3::after {
 }
 
 .icon-list i {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #a5b4fc;
 }
 
-
+/* ===== Projects ===== */
 .projects {
   max-width: 900px;
   margin: 0 auto;
@@ -179,12 +240,12 @@ section h3::after {
   border-radius: 10px;
   margin-bottom: 40px;
   border-left: 4px solid #a5b4fc;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.7);
 }
 
 .project-card h4 {
@@ -214,7 +275,7 @@ section h3::after {
   opacity: 0.9;
 }
 
-
+/* ===== Achievements ===== */
 .achievements {
   max-width: 900px;
   margin: 0 auto;
@@ -231,15 +292,15 @@ section h3::after {
   border-radius: 8px;
   margin-bottom: 16px;
   line-height: 1.6;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .achievements li:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
 }
 
-
+/* ===== Contact ===== */
 .contact {
   max-width: 900px;
   margin: 0 auto;
@@ -265,58 +326,16 @@ section h3::after {
   font-size: 1.05rem;
   border-bottom: 1px solid transparent;
   padding-bottom: 4px;
-}
-
-.contact-links a:hover {
-  border-color: #a5b4fc;
-}
-
-
-h1, h2, h3, h4 {
-  letter-spacing: 0.3px;
-}
-
-.hero > * {
-  animation: fadeUp 0.8s ease forwards;
-}
-
-.hero > *:nth-child(1) { animation-delay: 0.1s; }
-.hero > *:nth-child(2) { animation-delay: 0.2s; }
-.hero > *:nth-child(3) { animation-delay: 0.3s; }
-.hero > *:nth-child(4) { animation-delay: 0.4s; }
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-section:not(.hero) {
-  animation: fadeSection 0.9s ease forwards;
-}
-
-@keyframes fadeSection {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-a {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-a:hover {
-  transform: translateY(-2px);
+.contact-links a:hover {
+  transform: translateY(-3px);
   opacity: 0.9;
+  border-color: #a5b4fc;
+}
+
+/* ===== Typography Polish ===== */
+h1, h2, h3, h4 {
+  letter-spacing: 0.3px;
 }
