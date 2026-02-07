@@ -1,9 +1,10 @@
+import profilePic from "./assets/profile.jpeg";
 function App() {
   return (
     <div className="app">
       <section className="hero visible">
         <img
-        src="/src/assets/profile.jpeg"
+        src={profilePic}
         alt="Ritika Srivastava"
         className="profile-pic"
         />
