@@ -2,6 +2,11 @@ function App() {
   return (
     <div className="app">
       <section className="hero visible">
+        <img
+        src="/src/assets/profile.jpeg"
+        alt="Ritika Srivastava"
+        className="profile-pic"
+        />
         <h1>Ritika Srivastava</h1>
         <h2>Backend-Focused Full-Stack Developer</h2>
         <p>
